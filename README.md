@@ -1,2 +1,2 @@
 # plot-python
-Plotting utilities for Python
+Plotting utilities for Python.
