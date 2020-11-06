@@ -1,5 +1,5 @@
 """
-Plotting utilities for Python.
+Neat plotting utilities for Python.
 """
 
 import pathlib
