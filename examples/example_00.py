@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-import plot_python
+import neatplot
 
 
 x = np.linspace(0, 10, 100)
@@ -25,6 +25,6 @@ plt.ylim([-1.5, 2.5])
 
 plt.title('Sine($x$) and Cosine($x$)')
 
-plot_python.save_figure('example')
+neatplot.save_figure('example')
 
 plt.show()
