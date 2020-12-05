@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 import neatplot
+neatplot.set_style()
 
 
 x = np.linspace(0, 10, 100)
