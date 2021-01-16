@@ -26,6 +26,6 @@ plt.ylim([-1.5, 2.5])
 
 plt.title('Sine($x$) and Cosine($x$)')
 
-neatplot.save_figure('example')
+neatplot.save_figure('example_00')
 
 plt.show()
