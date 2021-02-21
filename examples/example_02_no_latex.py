@@ -28,5 +28,5 @@ ax.set_title('Sine($x$) and Cosine($x$)')
 ax.set_xlim(-0.5, 10.5)
 ax.set_ylim(-1.5, 2.5)
 
-# Save and show
+# Show figure
 plt.show()
