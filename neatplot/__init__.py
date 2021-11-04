@@ -6,6 +6,7 @@ import pathlib
 from typing import Union, Any, NoReturn
 
 import matplotlib.pyplot as plt
+from matplotlib.figure import Figure
 
 
 def set_style(style_str: str = 'default') -> NoReturn:
@@ -23,6 +24,7 @@ def set_style(style_str: str = 'default') -> NoReturn:
 def save_figure(
     file_name: str = 'figure',
     ext_list: Union[list, str, None] = 'png',
+    fig: Figure = None,
     white_background: bool = True,
 ) -> NoReturn:
     """Save matplotlib figure for all extensions in ext_list.
@@ -30,6 +32,7 @@ def save_figure(
     Args:
         file_name: name of saved image file.
         ext_list: list of strings (or single string) denoting file type.
+        fig: matplotlib Figure.
         white_background: set background of image to white if True.
     """
 
@@ -45,9 +48,10 @@ def save_figure(
     (fc, ec) = ('w', 'w') if white_background else ('none', 'none')
 
     # Save each type in ext_list
+    pre = fig if fig else plt
     for ext in ext_list:
         save_str = file_name + '.' + ext
-        plt.savefig(save_str, bbox_inches='tight', facecolor=fc, edgecolor=ec)
+        pre.savefig(save_str, bbox_inches='tight', facecolor=fc, edgecolor=ec)
         print(f'Saved figure {save_str}')
 
 
