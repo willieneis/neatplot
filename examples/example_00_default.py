@@ -28,5 +28,5 @@ ax.set_xlim(-0.5, 10.5)
 ax.set_ylim(-1.5, 2.5)
 
 # Save and show
-neatplot.save_figure('00')
+neatplot.save_figure('00', 'all')
 plt.show()
