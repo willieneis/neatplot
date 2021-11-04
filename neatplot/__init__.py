@@ -3,22 +3,39 @@ Neat plotting utilities for Python.
 """
 
 import pathlib
+from typing import Union, Any, NoReturn
+
 import matplotlib.pyplot as plt
 
 
-def set_style(style_str='default'):
+def set_style(style_str: str = 'default') -> NoReturn:
+    """Set the matplotlib plotting style.
+
+    Args:
+        style_str: string for style file.
+    """
     if style_str == 'default':
         plt.style.use((pathlib.Path(__file__).parent / 'matplotlibrc').resolve())
     elif style_str == 'fonts':
         plt.style.use((pathlib.Path(__file__).parent / 'matplotlibrc_fonts').resolve())
 
 
-def save_figure(file_name='figure', ext_list=None, white_background=True):
-    """Save figure for all extensions in ext_list."""
+def save_figure(
+    file_name: str = 'figure',
+    ext_list: Union[list, str, None] = 'png',
+    white_background: bool = True,
+) -> NoReturn:
+    """Save matplotlib figure for all extensions in ext_list.
 
-    # Default ext_list
-    if ext_list is None:
-        ext_list = ['pdf', 'png']
+    Args:
+        file_name: name of saved image file.
+        ext_list: list of strings (or single string) denoting file type.
+        white_background: set background of image to white if True.
+    """
+
+    # If 'all' keyword, use all extensions
+    if ext_list == 'all':
+        ext_list = ['pdf', 'png', 'svg']
 
     # If ext_list is a single str
     if isinstance(ext_list, str):
@@ -34,6 +51,11 @@ def save_figure(file_name='figure', ext_list=None, white_background=True):
         print(f'Saved figure {save_str}')
 
 
-def update_rc(key_str, value):
-    """Update matplotlib rc params."""
+def update_rc(key_str: str, value: Any) -> NoReturn:
+    """Update matplotlibrc parameters.
+
+    Args:
+        key_str: string for a matplotlibrc parameter.
+        value: associated value to set the matplotlibrc parameter.
+    """
     plt.rcParams.update({key_str: value})
