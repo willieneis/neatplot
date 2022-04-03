@@ -2,8 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 import neatplot
-neatplot.set_style()
-neatplot.update_rc('text.usetex', False)
+neatplot.set_style('notex')
 
 
 # Data

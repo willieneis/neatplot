@@ -19,6 +19,12 @@ def set_style(style_str: str = 'default') -> NoReturn:
         plt.style.use((pathlib.Path(__file__).parent / 'matplotlibrc').resolve())
     elif style_str == 'fonts':
         plt.style.use((pathlib.Path(__file__).parent / 'matplotlibrc_fonts').resolve())
+    elif style_str == 'notex':
+        set_style()
+        update_rc_notex()
+    elif style_str == 'fontsnotex':
+        set_style('fonts')
+        update_rc_notex()
 
 
 def save_figure(
@@ -63,3 +69,9 @@ def update_rc(key_str: str, value: Any) -> NoReturn:
         value: associated value to set the matplotlibrc parameter.
     """
     plt.rcParams.update({key_str: value})
+
+
+def update_rc_notex() -> NoReturn:
+    """Update matplotlibrc parameters for running without latex."""
+    update_rc('text.usetex', False)
+    update_rc('mathtext.fontset', 'stix')
