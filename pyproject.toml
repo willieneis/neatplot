@@ -29,7 +29,4 @@ Homepage = "https://github.com/willieneis/neatplot"
 packages = ["neatplot"]
 
 [tool.hatch.build.targets.sdist]
-include = ["/neatplot"]
-
-[tool.hatch.build.hooks.custom]
-paths = ["neatplot/matplotlibrc", "neatplot/matplotlibrc_fonts"]
+include = ["/neatplot", "neatplot/matplotlibrc", "neatplot/matplotlibrc_fonts"]
