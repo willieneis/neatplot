@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "neatplot"
+version = "0.1.0"
+description = "Plotting utilities for Python"
+readme = "README.md"
+authors = [
+    {name = "Willie Neiswanger", email = "willie.neiswanger@gmail.com"},
+    {name = "Viraj Mehta"},
+]
+dependencies = [
+    "numpy>=1.19.0",
+    "matplotlib>=3.2.2",
+    # Add other dependencies here
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.6"
+
+[project.urls]
+Homepage = "https://github.com/willieneis/neatplot"
+
+[tool.hatch.build.targets.wheel]
+packages = ["neatplot"]
+
+[tool.hatch.build.targets.sdist]
+include = ["/neatplot", "neatplot/matplotlibrc", "neatplot/matplotlibrc_fonts"]
