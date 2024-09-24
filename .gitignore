@@ -13,6 +13,8 @@ __pycache__/
 .ipynb_checkpoints
 *.pyc
 venv/
+venv-*
+venv_*
 
 # C extensions
 *.so
