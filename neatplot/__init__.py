@@ -2,6 +2,8 @@
 Neat plotting utilities for Python.
 """
 
+__version__ = "0.1.0"
+
 import pathlib
 from typing import Union, Any, NoReturn
 
