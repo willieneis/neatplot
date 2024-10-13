@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 import neatplot
 neatplot.set_style('notex')
-neatplot.update_rc('font.family', 'Helvetica')
+neatplot.update_rc('font.family', 'Palatino')
 
 
 # Data
@@ -29,5 +29,5 @@ ax.set_xlim(-0.5, 10.5)
 ax.set_ylim(-1.5, 2.5)
 
 # Show figure
-neatplot.save_figure('04', 'png', fig)
+neatplot.save_figure('05', 'png', fig)
 plt.show()
