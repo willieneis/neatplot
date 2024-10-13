@@ -22,7 +22,7 @@ def set_style(style_str: str = 'default') -> NoReturn:
     elif style_str == 'fonts':
         plt.style.use((pathlib.Path(__file__).parent / 'matplotlibrc_fonts').resolve())
     elif style_str == 'notex':
-        set_style()
+        set_style('default')
         update_rc_notex()
     elif style_str == 'fontsnotex':
         set_style('fonts')
